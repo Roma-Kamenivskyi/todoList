@@ -37,11 +37,30 @@
   }
 
   function itemBtnListeners(e) {
+    const listItem = e.target.parentElement.parentElement;
+    let label = listItem.querySelector("label");
+    let inputEdit = listItem.querySelector(".inputEdit");
     if (e.target.classList.contains("remove-btn")) {
-      e.target.parentElement.parentElement.remove();
+      listItem.remove();
     }
+
     if (e.target.classList.contains("edit-btn")) {
-      console.log("Edit");
+      // inputEdit.value = label.textContent;
+      let editBtn = e.target.parentElement.querySelector(".edit-btn");
+
+      if (editBtn.textContent == "Edit") {
+        label.style.display = "none";
+        inputEdit.style.display = "block";
+        editBtn.textContent = "Save";
+      } else {
+        if (inputEdit.value) {
+          label.textContent = inputEdit.value;
+          console.log(1);
+        }
+        label.style.display = "block";
+        inputEdit.style.display = "none";
+        editBtn.textContent = "Edit";
+      }
     }
   }
 })();
