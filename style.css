@@ -27,7 +27,9 @@ body {
   transition: 0.4s ease;
 }
 .todo-input:focus {
-  border-bottom: 2px solid #a94df4;
+  outline: none;
+  box-shadow: 0px 1px 0px 0px #00537e;
+  border-bottom-color: #00537e;
 }
 .todo-input::-moz-placeholder {
   color: #cccccc; /* Цвет подсказывающего текста */
@@ -52,47 +54,70 @@ body {
   font-weight: normal;
   color: #000000;
 }
-.addtask-btn {
+.add-task-btn {
   font-family: "Poppins", sans-serif;
   display: block;
   width: 160px;
   padding: 10px;
   border-radius: 3px;
   font-size: 20px;
-  background-color: #a94df4;
-  color: #fff;
+  background: linear-gradient(45deg, #00537e, #3aa17e);
+  color: #ffffff;
   border: none;
   cursor: pointer;
   transition: 0.4s ease;
 }
-.addtask-btn:focus {
+.add-task-btn:focus {
   outline: none;
 }
-.addtask-btn:hover {
-  box-shadow: 0px 3px 10px 2px gray;
+.add-task-btn:hover {
 }
-.task-list {
+.todo-list {
   text-align: left;
   list-style-type: none;
-  border-top: 1px solid #cccccc;
 }
-.task-list li {
+.item-button {
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-edit {
+  background-color: #00537e;
+  margin-right: 10px;
+}
+.btn-edit:hover {
+  background-color: #033953;
+}
+.btn-remove {
+  background-color: #3aa17e;
+}
+.todo-list li {
   padding: 10px;
-  border: 1px solid #cccccc;
-  border-top: none;
+  border-bottom: 1px solid #cccccc;
 }
 .list-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.item-button {
-  padding: 10px 20px;
+
+.filter-wrapper h3 {
+  font-family: "Segoe script", cursive;
+  font-size: 26px;
 }
-.filter-wrapper {
-  text-align: left;
-}
-.inputEdit {
+.input-edit {
   padding: 10px;
+  display: none;
+}
+
+.active {
+  display: block;
+}
+.hide {
   display: none;
 }
