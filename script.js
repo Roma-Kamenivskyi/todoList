@@ -1,6 +1,6 @@
 (function() {
   //DOM vaariables
-  const form = document.getElementById("form");
+  const form = document.querySelector("#form");
   const taskList = document.getElementById("taskList");
   const todoInput = document.getElementById("todoInput");
 
